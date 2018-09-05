@@ -190,29 +190,3 @@ print(" [x] Comenzando conversación...")
 channel.start_consuming()
 
 
-# In[ ]:
-
-
-import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-s.bind(("www.google.com", 80))
-s.listen(5)
-conn, addr = s.accept()
-
-
-# In[ ]:
-
-
-import urllib
-CLIENT_ID= '1350_2w3ssw2c0f40swwkgs8gccscs844wsksksow8o40sw0g4g4wo0'
-CLIENT_SECRET='3a8ig9dxlm80ok4koc0w40cssgsg00ggcwkgw4oc88kgs8gcc0'
-
-urllib.request.urlopen('https://pubsbapi.smartbike.com/oauth/v2/token?client_id=1350_2w3ssw2c0f40swwkgs8gccscs844wsksksow8o40sw0g4g4wo0&client_secret=3a8ig9dxlm80ok4koc0w40cssgsg00ggcwkgw4oc88kgs8gcc0&grant_type=client_credentials').read()
-
-
-# In[ ]:
-
-
-print(urllib.request.Request('http://google.com'))
-
