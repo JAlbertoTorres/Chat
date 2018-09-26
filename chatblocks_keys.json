@@ -1,0 +1,68 @@
+{
+  "ejemploInfo": {
+    "content": "string example: text,url",
+    "next_id": "Text_string",
+    "blockType": "informativo",
+    "contentType": "string cases:text,video,image",
+    "typingTime": 12
+  },
+  "ejemploInput": {
+    "content": "string example: text",
+    "next_id": "Text_string",
+    "blockType": "input",
+    "contentType": "string cases:text,video,image",
+    "typingTime": 12,
+    "validacion":"regex",
+    "Default_id":"Text_string",
+    "save_var":"varName"
+  },
+  "ejemploQR": {
+    "content": "string example: text",
+    "options":["caso1","caso2","caso3","caso4"],
+    "next_id": {
+    	         "caso1":"next_id1",
+    	         "caso2":"next_id2",
+    	         "caso3":"next_id3",
+    	         "caso4":"next_id4" 
+    	       },
+    "blockType": "quickReplay",
+    "typingTime": 12,
+    "Default_id":"Text_string",
+    "save_var":"varName"
+  },
+    "ejemploSlide":{
+
+        "content":" {  
+                        # for each Estation
+
+                        "Title":"{{nombre}}", 
+                       "description":"{{dir}}", 
+                       "url":"string example: text",
+                       "Butons":[{ "option":"string",
+                        "next_id":"string",
+                        "Type":"string",
+                         "parameters":{}
+                          },
+                         { "option":"string",
+                          "next_id":"string",
+                           "Type":"string",
+                          "parameters":{}
+                        },
+                      { "option":"string",
+                        "next_id":"string",
+                       "Type":"string",
+                       "parameters":{}
+                            }
+                         ]   ,   
+
+                         }  "
+
+        "blockType": "Slide",
+        "typingTime": 12,
+        "Default_id":"Text_string",
+        "save_var":"varName"
+        "api"
+    }
+        
+
+}
