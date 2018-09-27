@@ -1,15 +1,16 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 import json
 import pika
 import uuid
+entidad =[]
 
 
-# In[ ]:
+# In[2]:
 
 
 def conv(msj):
@@ -29,6 +30,11 @@ def conv(msj):
         return entidad, ans, estado
     elif(tipo=="input"):
         ans= input()
+        entidad.append(ans)
+        return entidad, ans, estado
+    elif(tipo=="inputDinamico"):
+        ans= input()
+        entidad.append(ans)
         return entidad, ans, estado
     elif(tipo=="informativo"):
         return entidad, str('next'), estado
@@ -61,13 +67,10 @@ class conversacion(object):
         #while (not ("adios") in n):
         while(cont>=0):
             if cont==0:
-                entidad={}
+                entidad=[]
                 resp="hi"
                 estado = "none"
-            
-            
-
-            n=  {"payload": [{"content":" ","state":" ", "entitites":" "}]}
+                n=  {"payload": [{"content":" ","state":" ", "entities": []}]}
 
             data=json.dumps(n)
             decoded=json.loads(data)
@@ -81,7 +84,7 @@ class conversacion(object):
             self.response = None
             self.corr_id = str(uuid.uuid4())
             self.channel.basic_publish(exchange='',
-                                       routing_key='chatbotV2',
+                                       routing_key='chatbotV3',
                                        properties=pika.BasicProperties(
                                              reply_to = self.callback_queue,
                                              correlation_id = self.corr_id,
@@ -103,4 +106,3 @@ chat = conversacion()
 
 response = chat.call()
 print(" [.] Got %r", response)   
-
