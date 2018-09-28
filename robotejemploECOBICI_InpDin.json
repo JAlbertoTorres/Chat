@@ -1,0 +1,143 @@
+{
+  "Saludo": {
+    "content": "Hola",
+    "next_id": "InfoRobot",
+    "blockType": "informativo",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "InfoRobot": {
+    "content": "Este es el robot para conusltar info de ECOBICI",
+    "next_id": "OpMenu",
+    "blockType": "informativo",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "OpMenu": {
+    "content": "¿qué deseas hacer?",
+    "options": [
+      "Ordenar",
+      "Poner Queja",
+      "Consultar API"
+    ],
+    "next_id": {
+      "Ordenar": "Ordenar",
+      "Poner Queja": "Queja",
+      "Consultar API": "OpMenuAPI"
+    },
+    "blockType": "quickReply",
+    "typingTime": 1,
+    "Default_id": "OpMenuDefault",
+    "save_var": false
+  },
+  "OpMenuAPI": {
+    "content": "¿Como deseas consultar la info de la API?",
+    "options": [
+      "Consultar API Info",
+      "Consultar API Input"
+    ],
+    "next_id": {
+      "Consultar API Info": "ObtenerDatosAPIInfo",
+      "Consultar API Input": "ObtenerDatosAPIInput"
+    },
+    "blockType": "quickReply",
+    "typingTime": 1,
+    "Default_id": "OpMenuDefault",
+    "save_var": false
+  },
+  "ObtenerDatosAPIInfo": {
+    "content": "",
+    "links": {
+        "url1": "https://pubsbapi.smartbike.com/oauth/v2/token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&grant_type=client_credentials",
+        "url2": "https://pubsbapi.smartbike.com/api/v1/stations.json?access_token={ACCESS_TOKEN}"
+    },
+    "credenciales": {
+        "client_id": "1449_5zh2wfosggcoo8ssso8cg4gs808k8css8k0ccss8g4k0osw0k8",
+        "client_secret": "32a4o0vorb0gs8c4ow0g0080cw4s8kcokcoswcoc88cc8ogkss"
+    },
+    "next_id": "MenuAPI",
+    "blockType": "informativoDinamico",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "ObtenerDatosAPIInput": {
+    "content": "Introduce el {varInpAPI} que deseas buscar:",
+    "links": {
+        "url1": "https://pubsbapi.smartbike.com/oauth/v2/token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&grant_type=client_credentials",
+        "url2": "https://pubsbapi.smartbike.com/api/v1/stations.json?access_token={ACCESS_TOKEN}"
+    },
+    "credenciales": {
+        "client_id": "1449_5zh2wfosggcoo8ssso8cg4gs808k8css8k0ccss8g4k0osw0k8",
+        "client_secret": "32a4o0vorb0gs8c4ow0g0080cw4s8kcokcoswcoc88cc8ogkss"
+    },
+    "next_id": "RespuestaConsulta",
+    "blockType": "inputDinamico",
+    "contentType": "text",
+    "typingTime": 1,
+    "save_var": "varInpAPI"
+  },
+  "RespuestaConsulta": {
+    "content": "Los datos de la estacion con {varInpAPI} igual a {{varInpAPI}} son= Su direccion es {{address}}, su codigo postal es {{zipCode}} en el distrito {{districtName}}",
+    "links": {
+        "url1": "https://pubsbapi.smartbike.com/oauth/v2/token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&grant_type=client_credentials",
+        "url2": "https://pubsbapi.smartbike.com/api/v1/stations.json?access_token={ACCESS_TOKEN}"
+    },
+    "credenciales": {
+        "client_id": "1449_5zh2wfosggcoo8ssso8cg4gs808k8css8k0ccss8g4k0osw0k8",
+        "client_secret": "32a4o0vorb0gs8c4ow0g0080cw4s8kcokcoswcoc88cc8ogkss"
+    },
+    "next_id": "Salida",
+    "blockType": "informativoDinamico",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "OpMenuDefault": {
+    "content": "Escoje una opcion",
+    "next_id": "OpMenu",
+    "blockType": "informativo",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "Queja": {
+    "content": "Escribe tu Queja",
+    "next_id": "Salida",
+    "blockType": "input",
+    "contentType": "text",
+    "typingTime": 1,
+    "validacion": ".*",
+    "Default_id": "",
+    "save_var": "variableQueja"
+  },
+  "Ordenar": {
+    "content": "Que quieres ",
+    "options": [
+      "Pizza",
+      "Refresco"
+    ],
+    "next_id": {
+      "Pizza": "Salida",
+      "Refresco": "Salida"
+    },
+    "blockType": "quickReply",
+    "typingTime": 1,
+    "Default_id": "Ordenar",
+    "save_var": false
+  },
+  "Salida": {
+    "content": "gracias vuelva pronto",
+    "next_id": "Vacio",
+    "blockType": "informativo",
+    "contentType": "text",
+    "typingTime": 1
+  },
+  "Vacio": {
+    "content": " ",
+    "next_id": "Saludo",
+    "blockType": "input",
+    "contentType": "text",
+    "typingTime": 1,
+    "validacion": ".*",
+    "Default_id": "Saludo",
+    "save_var": false
+  }  
+}
