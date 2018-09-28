@@ -30,6 +30,37 @@
     "Default_id":"Text_string",
     "save_var":"varName"
   },
+  "ejemploInfoDinamico": {
+    "content": "string example: text",
+    "links": {
+        "url1": "string example: text",
+        "url2": "string example: text"
+    },
+    "credenciales": {
+        "client_id": "string example: text",
+        "client_secret": "string example: text"
+    },
+    "next_id": "Text_string",
+    "blockType": "informativoDinamico",
+    "contentType": "string cases:text,video,image",
+    "typingTime": 4
+  },
+  "ejemploInputDinamico": {
+    "content": "string example: text",
+    "links": {
+        "url1": "string example: text",
+        "url2": "string example: text"
+    },
+    "credenciales": {
+        "client_id": "string example: text",
+        "client_secret": "string example: text"
+    },
+    "next_id": "Text_string",
+    "blockType": "informativoDinamico",
+    "contentType": "string cases:text,video,image",
+    "typingTime": 4
+    "save_var":"varName"
+  },
     "ejemploSlide":{
 
         "content":" {  
