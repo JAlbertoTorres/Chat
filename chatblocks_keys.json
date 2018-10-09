@@ -42,7 +42,7 @@
     },
     "next_id": "Text_string",
     "blockType": "informativoDinamico",
-    "contentType": "string cases:text,video,image",
+    "contentType": "string cases:text",
     "typingTime": 4
   },
   "ejemploInputDinamico": {
@@ -57,8 +57,24 @@
     },
     "next_id": "Text_string",
     "blockType": "informativoDinamico",
-    "contentType": "string cases:text,video,image",
+    "contentType": "string cases:text",
     "typingTime": 4
+    "save_var":"varName"
+  },
+  "ejemploQRDinamico": {
+    "content": "string example: text",
+    "links": {
+        "url1": "string example: text",
+        "url2": "string example: text"
+    },
+    "credenciales": {
+        "client_id": "string example: text",
+        "client_secret": "string example: text"
+    },
+    "options": [],
+    "blockType": "quickReplayDinamico",
+    "typingTime": 12,
+    "Default_id":"Text_string",
     "save_var":"varName"
   },
     "ejemploSlide":{
